@@ -1,5 +1,7 @@
 @import "_normalize";
 @import "_variables";
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 
 
 html {
@@ -11,6 +13,54 @@ html {
 }
 
 body {
-  color: $yellow;
-  background: $violet;
+ background-color: #333131;
+ height: 100vh;
 }
+
+.wheel{
+  background-color: #C2AB56;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  position: relative;
+  margin:auto;
+  margin-top: 217px;
+  
+}
+
+.wheel-inside{
+  background-color: #333131;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  display:flex;
+  
+}
+
+.clock{
+width:100%;
+height:100%;
+margin-top: 72px;
+margin-left: 35px;
+font-size: 60px;
+font-family: 'Roboto', sans-serif;
+color: #C2AB56;
+}
+
+.buttons{
+text-align: center;
+
+&__start{
+  background-color: #C2AB56;
+  z-index: 1;
+  width: 200px;
+  height: 50px;
+  margin-top: 37px;
+  font-size: 30px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+}}
