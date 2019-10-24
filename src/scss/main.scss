@@ -52,15 +52,45 @@ color: #C2AB56;
 
 .buttons{
 text-align: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+height: 300px;
 
 &__start{
-  background-color: #C2AB56;
-  z-index: 1;
-  width: 200px;
-  height: 50px;
-  margin-top: 37px;
-  font-size: 30px;
-  border: none;
-  border-radius: 5px;
-  text-align: center;
-}}
+  @include button; 
+ 
+}
+
+&__pause{
+  @include button;
+  z-index: 3;
+  display: none;
+}
+
+&__continue{
+  @include button; 
+  z-index: 3;
+  display: none;
+}
+
+&__reset{
+  @include button;
+  z-index: 4;
+  margin-top: 30px;
+  display:none;
+}
+
+
+
+
+
+}
+
+.display-pauze{
+  display: inline-block;
+}
+
+.hide-button{
+  display: none;
+}

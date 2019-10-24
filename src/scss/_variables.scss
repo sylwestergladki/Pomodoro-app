@@ -1,1 +1,14 @@
 $grey: #333131;
+
+@mixin button {
+    background-color: #C2AB56;
+  z-index: 1;
+  width: 200px;
+  height: 50px;
+  margin-top: 37px;
+  font-size: 30px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
