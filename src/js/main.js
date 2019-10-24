@@ -25,7 +25,7 @@ const timerDisplay = document.querySelector('.clock');
 const key = "operation";
 let resumeTime;
 let pomodoroStage = 0;
-let timeForPomodoro = 20;
+let timeForPomodoro = 10;
 
 localStorage.setItem(key, 0)
 
@@ -50,8 +50,9 @@ function timer(seconds) {
       reset.style.display = "none";
       pause.style.display = "none";
       start.style.display = "block";
-      pomodoroStage++;
+      pomodoroStage == 7 ? pomodoroStage = 0 :  pomodoroStage++;
       pomodoroChapter();
+     
       return ;
     }
     else if(localStorage.getItem(key)==1)
@@ -101,7 +102,8 @@ function resetPomodoro(){
   reset.style.display = "none";
   pause.style.display = "none";
   start.style.display = "block";
-  timerDisplay.innerHTML = `00:20`;
+  timerDisplay.innerHTML = `00:10`;
+  pomodoroStage = 0
 }
 
 
@@ -118,41 +120,47 @@ function continuePomodoro(){
   
 }
 function pomodoroChapter(){ //if i have 0 then i work
-  if(pomodoroStage==1){ //break
+  if(pomodoroStage==0){ //break
+    clock.innerHTML= `00:10`
+    timeForPomodoro = 10;
+    return timeForPomodoro;
+    }
+
+  else if(pomodoroStage==1){ //break
+  clock.innerHTML= `00:05`
+  timeForPomodoro = 5;
+  return timeForPomodoro;
+  }
+  else if(pomodoroStage==2){ //work
   clock.innerHTML= `00:10`
   timeForPomodoro = 10;
   return timeForPomodoro;
   }
-  else if(pomodoroStage==2){ //work
-  clock.innerHTML= `00:20`
-  timeForPomodoro = 20;
-  return timeForPomodoro;
-  }
   
   else if(pomodoroStage==3){ //break
-    clock.innerHTML= `00:10`
-    timeForPomodoro = 10;
+    clock.innerHTML= `00:05`
+    timeForPomodoro = 5;
     return timeForPomodoro;
   }
   else if(pomodoroStage==4){ //work
-    clock.innerHTML= `00:20`
-    timeForPomodoro = 20;
+    clock.innerHTML= `00:10`
+    timeForPomodoro = 10;
     return timeForPomodoro;
     }
     else if(pomodoroStage==5){ //break
+      clock.innerHTML= `00:05`
+      timeForPomodoro = 5;
+      return timeForPomodoro;
+    }
+    else if(pomodoroStage==6){ //work
       clock.innerHTML= `00:10`
       timeForPomodoro = 10;
       return timeForPomodoro;
     }
-    else if(pomodoroStage==6){ //work
-      clock.innerHTML= `00:20`
-      timeForPomodoro = 20;
-      return timeForPomodoro;
-    }
     else if(pomodoroStage==7){ //break
-      clock.innerHTML= `00:15`
-      timeForPomodoro = 15;
-      pomodoroStage = 0;
+      clock.innerHTML= `00:07`
+      timeForPomodoro = 7;
+      
       return timeForPomodoro, pomodoroStage;
     }
   
