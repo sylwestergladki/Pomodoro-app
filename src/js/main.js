@@ -45,11 +45,13 @@ function timer(seconds) {
     resumeTime = secondsLeft;
     // check if we should stop it!
     if(secondsLeft < 0 ) {
+      sound();
       clearInterval(countdown);
       continueButton.style.display="none";
       reset.style.display = "none";
       pause.style.display = "none";
       start.style.display = "block";
+     
       pomodoroStage == 7 ? pomodoroStage = 0 :  pomodoroStage++;
       pomodoroChapter();
      
@@ -165,4 +167,10 @@ function pomodoroChapter(){ //if i have 0 then i work
     }
   
 
+}
+
+
+function sound(){
+  let dingSound = new Audio("../assets/Ding.wav");
+  dingSound.play();
 }
