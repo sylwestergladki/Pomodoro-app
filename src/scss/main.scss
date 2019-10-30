@@ -94,3 +94,40 @@ height: 300px;
 .hide-button{
   display: none;
 }
+
+.pause-visible{
+  display: block;
+  animation: popup .5s linear forwards;
+}
+
+.start-remove{
+  
+  animation: remove .5s linear forwards;
+  display: none;
+}
+
+
+
+
+@keyframes popup{
+  0%{
+    margin-left: 200px;
+    opacity: 0;}
+  100%{
+    margin-left:0;
+    opacity: 1;
+  }
+}
+
+@keyframes remove{
+  0%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0.5;
+  }
+  100%{
+    opacity: 0;
+    display: none;
+  }
+}

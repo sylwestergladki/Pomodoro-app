@@ -49,7 +49,7 @@ function timer(seconds) {
       clearInterval(countdown);
       continueButton.style.display="none";
       reset.style.display = "none";
-      pause.style.display = "none";
+      pause.classList.remove("pause-visible");
       start.style.display = "block";
      
       pomodoroStage == 7 ? pomodoroStage = 0 :  pomodoroStage++;
@@ -77,7 +77,8 @@ function displayTimeLeft(seconds) {
 start.addEventListener('click', firstPomodoro);
 
 function firstPomodoro(){
-  pause.style.display = "block";
+ 
+  pause.classList.add("pause-visible");
   start.style.display ="none";
   timer(timeForPomodoro);
 }
@@ -92,7 +93,7 @@ function pausePomodoro(){
   localStorage.setItem(key,1);
   continueButton.style.display="block";
   reset.style.display = "block"
-  pause.style.display = "none";
+  pause.classList.remove("pause-visible");
   
 }
 
@@ -102,7 +103,7 @@ function resetPomodoro(){
   localStorage.setItem(key,0);
   continueButton.style.display="none";
   reset.style.display = "none";
-  pause.style.display = "none";
+  pause.classList.remove("pause-visible");
   start.style.display = "block";
   timerDisplay.innerHTML = `00:10`;
   pomodoroStage = 0
@@ -115,12 +116,18 @@ function continuePomodoro(){
   console.log(resumeTime);
   continueButton.style.display="none";
   reset.style.display = "none";
-  pause.style.display = "block";
+  pause.classList.add("pause-visible");
   start.style.display = "none";
   localStorage.setItem(key, 0)
   timer(resumeTime);
   
 }
+
+
+
+
+//Check a pomodoroChapter
+
 function pomodoroChapter(){ //if i have 0 then i work
   if(pomodoroStage==0){ //break
     clock.innerHTML= `00:10`
@@ -170,6 +177,7 @@ function pomodoroChapter(){ //if i have 0 then i work
 }
 
 
+//play ding sound
 function sound(){
   let dingSound = new Audio("../assets/Ding.wav");
   dingSound.play();
