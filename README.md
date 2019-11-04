@@ -2,8 +2,9 @@
 App made for use pomodoro technique.
 
 ## Stack
-  `-JS`
-  `-SCSS`
-  `-LocalStorage`
-  `-Gulp`
+  `JS`
+  `SCSS`
+  `LocalStorage`
+  `Gulp`
+  `PWA`
 
