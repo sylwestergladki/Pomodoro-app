@@ -48,8 +48,8 @@ function timer(seconds) {
       sound();
       clearInterval(countdown);
       continueButton.style.display="none";
-      reset.style.display = "none";
-      pause.classList.remove("pause-visible");
+      reset.classList.remove("pause-action");
+      pause.style.display = "none";
       start.style.display = "block";
      
       pomodoroStage == 7 ? pomodoroStage = 0 :  pomodoroStage++;
@@ -78,7 +78,7 @@ start.addEventListener('click', firstPomodoro);
 
 function firstPomodoro(){
  
-  pause.classList.add("pause-visible");
+  pause.style.display ="block";
   start.style.display ="none";
   timer(timeForPomodoro);
 }
@@ -91,9 +91,10 @@ pause.addEventListener('click', pausePomodoro)
 
 function pausePomodoro(){
   localStorage.setItem(key,1);
-  continueButton.style.display="block";
-  reset.style.display = "block"
-  pause.classList.remove("pause-visible");
+  reset.classList.add("pause-action");
+  continueButton.style.display = "block";
+  
+  pause.style.display = "none";
   
 }
 
@@ -102,8 +103,8 @@ reset.addEventListener('click', resetPomodoro)
 function resetPomodoro(){
   localStorage.setItem(key,0);
   continueButton.style.display="none";
-  reset.style.display = "none";
-  pause.classList.remove("pause-visible");
+  reset.classList.remove("pause-action");
+  pause.style.display = "none";
   start.style.display = "block";
   timerDisplay.innerHTML = `00:10`;
   pomodoroStage = 0
@@ -115,8 +116,8 @@ continueButton.addEventListener('click', continuePomodoro);
 function continuePomodoro(){
   console.log(resumeTime);
   continueButton.style.display="none";
-  reset.style.display = "none";
-  pause.classList.add("pause-visible");
+  reset.classList.remove("pause-action");
+  pause.style.display = "block";
   start.style.display = "none";
   localStorage.setItem(key, 0)
   timer(resumeTime);
