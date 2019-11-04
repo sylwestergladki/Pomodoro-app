@@ -1,9 +1,9 @@
-# wtf-gulp-starter
+# Pomodoro-app
+App made for use pomodoro technique.
 
-`npm install -g gulp-cli`
+## Stack
+  `-JS`
+  `-SCSS`
+  `-LocalStorage`
+  `-Gulp`
 
-`npm install`
-
-`gulp`
-
-To publish your page using github pages use `npm run deploy`
