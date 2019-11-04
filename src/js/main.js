@@ -106,7 +106,7 @@ function resetPomodoro(){
   reset.classList.remove("pause-action");
   pause.style.display = "none";
   start.style.display = "block";
-  timerDisplay.innerHTML = `00:10`;
+  timerDisplay.innerHTML = `25:00`;
   pomodoroStage = 0
 }
 
