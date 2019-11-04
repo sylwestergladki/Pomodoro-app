@@ -25,7 +25,7 @@ const timerDisplay = document.querySelector('.clock');
 const key = "operation";
 let resumeTime;
 let pomodoroStage = 0;
-let timeForPomodoro = 10;
+let timeForPomodoro = 1500;
 
 localStorage.setItem(key, 0)
 
@@ -131,45 +131,45 @@ function continuePomodoro(){
 
 function pomodoroChapter(){ //if i have 0 then i work
   if(pomodoroStage==0){ //break
-    clock.innerHTML= `00:10`
-    timeForPomodoro = 10;
+    clock.innerHTML= `25:00`
+    timeForPomodoro = 1500;
     return timeForPomodoro;
     }
 
   else if(pomodoroStage==1){ //break
-  clock.innerHTML= `00:05`
-  timeForPomodoro = 5;
+  clock.innerHTML= `05:00`
+  timeForPomodoro = 300;
   return timeForPomodoro;
   }
   else if(pomodoroStage==2){ //work
-  clock.innerHTML= `00:10`
-  timeForPomodoro = 10;
+  clock.innerHTML= `25:00`
+  timeForPomodoro = 1500;
   return timeForPomodoro;
   }
   
   else if(pomodoroStage==3){ //break
-    clock.innerHTML= `00:05`
-    timeForPomodoro = 5;
+    clock.innerHTML= `05:00`
+    timeForPomodoro = 300;
     return timeForPomodoro;
   }
   else if(pomodoroStage==4){ //work
-    clock.innerHTML= `00:10`
-    timeForPomodoro = 10;
+    clock.innerHTML= `25:00`
+    timeForPomodoro = 1500;
     return timeForPomodoro;
     }
     else if(pomodoroStage==5){ //break
-      clock.innerHTML= `00:05`
-      timeForPomodoro = 5;
+      clock.innerHTML= `05:00`
+      timeForPomodoro = 300;
       return timeForPomodoro;
     }
     else if(pomodoroStage==6){ //work
-      clock.innerHTML= `00:10`
-      timeForPomodoro = 10;
+      clock.innerHTML= `25:00`
+      timeForPomodoro = 1500;
       return timeForPomodoro;
     }
     else if(pomodoroStage==7){ //break
-      clock.innerHTML= `00:07`
-      timeForPomodoro = 7;
+      clock.innerHTML= `15:00`
+      timeForPomodoro = 900;
       
       return timeForPomodoro, pomodoroStage;
     }
