@@ -74,6 +74,9 @@ function displayTimeLeft(seconds) {
   timerDisplay.innerHTML = display;
 }
 
+
+//start timer
+
 start.addEventListener('click', firstPomodoro);
 
 function firstPomodoro(){
@@ -85,7 +88,7 @@ function firstPomodoro(){
 
 
 
-
+//pause timer
 
 pause.addEventListener('click', pausePomodoro)
 
@@ -97,6 +100,8 @@ function pausePomodoro(){
   pause.style.display = "none";
   
 }
+
+//reset timer
 
 reset.addEventListener('click', resetPomodoro)
 
@@ -110,6 +115,7 @@ function resetPomodoro(){
   pomodoroStage = 0
 }
 
+//resume timer
 
 continueButton.addEventListener('click', continuePomodoro);
 
