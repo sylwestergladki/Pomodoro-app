@@ -318,8 +318,7 @@ html {
 
 body {
   background-color: #333131;
-  max-height: 100vh;
-  overflow: hidden; }
+  max-height: 100vh; }
 
 .wheel {
   background-color: #C2AB56;
@@ -386,7 +385,7 @@ body {
     border: none;
     border-radius: 5px;
     text-align: center;
-    z-index: 3;
+    z-index: 2;
     display: none; }
   .buttons__continue {
     background-color: #C2AB56;
