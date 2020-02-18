@@ -26,8 +26,7 @@ const key = "operation";
 let resumeTime;
 let pomodoroStage = 0;
 let timeForPomodoro = 1500;
-
-localStorage.setItem(key, 0)
+let key = 0;
 
 
 function timer(seconds) {
@@ -57,7 +56,7 @@ function timer(seconds) {
      
       return ;
     }
-    else if(localStorage.getItem(key)==1)
+    else if(key==1)
     {clearInterval(countdown);
       return resumeTime;
     }
@@ -93,7 +92,7 @@ function firstPomodoro(){
 pause.addEventListener('click', pausePomodoro)
 
 function pausePomodoro(){
-  localStorage.setItem(key,1);
+  key = 1;
   reset.classList.add("pause-action");
   continueButton.style.display = "block";
   
@@ -106,7 +105,7 @@ function pausePomodoro(){
 reset.addEventListener('click', resetPomodoro)
 
 function resetPomodoro(){
-  localStorage.setItem(key,0);
+  key = 0;
   continueButton.style.display="none";
   reset.classList.remove("pause-action");
   pause.style.display = "none";
@@ -125,7 +124,7 @@ function continuePomodoro(){
   reset.classList.remove("pause-action");
   pause.style.display = "block";
   start.style.display = "none";
-  localStorage.setItem(key, 0)
+  key = 0;
   timer(resumeTime);
   
 }

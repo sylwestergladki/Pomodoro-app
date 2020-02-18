@@ -1,7 +1,7 @@
 {
-  "name": "Pomodoro-app",
+  "name": "pomodoro-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "App made for use pomodoro technique.",
   "main": "index.js",
   "scripts": {
     "predeploy": "gulp build",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sylwestergladki/Pomodoro-app/"
+    "url": "git+https://github.com/sylwestergladki/Pomodoro-app.git"
   },
   "keywords": [],
   "author": "",
@@ -63,4 +63,3 @@
     "bb >= 10"
   ]
 }
-
